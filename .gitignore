@@ -1,0 +1,34 @@
+# Ambientes virtuais Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+ENV/
+
+# Distribuição / empacotamento
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Ficheiros de configuração locais
+.env
+*.local
+
+# Diretório de saída gerado (excepto examples/)
+report/
+output/
+
+# Ficheiros de sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

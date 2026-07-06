@@ -1,0 +1,143 @@
+# Ficheiro de avaliação NIST CSF 2.0
+# Organização exemplo: empresa de tecnologia de média dimensão (150 colaboradores)
+# Escala de maturidade: 0 = Não Implementado … 4 = Otimizado
+
+organization: "TechSample Lda."
+assessor: "João Silva (CISO)"
+date: "2026-07-06"
+scope: "Infraestrutura de TI corporativa e serviços cloud"
+
+scores:
+  # ── GOVERN ──────────────────────────────────────────────────
+  GV.OC-01: 3   # Missão organizacional documentada
+  GV.OC-02: 2   # Partes interessadas parcialmente mapeadas
+  GV.OC-03: 3   # Requisitos legais/regulamentares identificados
+  GV.OC-04: 2   # Objetivos críticos em revisão
+  GV.OC-05: 2   # Dependências parcialmente mapeadas
+
+  GV.RM-01: 2   # Objetivos de gestão de risco definidos, mas não aprovados formalmente
+  GV.RM-02: 1   # Apetite pelo risco não formalizado
+  GV.RM-03: 1   # Risco cibernético não integrado no ERM
+  GV.RM-04: 2   # Direção estratégica parcialmente definida
+  GV.RM-05: 2   # Canais de comunicação estabelecidos
+  GV.RM-06: 1   # Metodologia de cálculo de risco incipiente
+  GV.RM-07: 1   # Oportunidades estratégicas não consideradas
+
+  GV.RR-01: 3   # Liderança ciente das responsabilidades
+  GV.RR-02: 2   # Papéis definidos mas não totalmente atribuídos
+  GV.RR-03: 2   # Recursos adequados para a maioria das áreas
+  GV.RR-04: 2   # Cibersegurança incluída parcialmente em RH
+
+  GV.PO-01: 2   # Política de segurança existente mas desatualizada
+  GV.PO-02: 1   # Revisão de políticas irregular
+
+  GV.OV-01: 2   # Revisão periódica dos resultados de risco
+  GV.OV-02: 1   # Estratégia de risco raramente revisada
+  GV.OV-03: 1   # Desempenho de GRC não formalizado
+
+  GV.SC-01: 1   # Programa de risco na cadeia de fornecimento incipiente
+  GV.SC-02: 1   # Requisitos para fornecedores não definidos
+  GV.SC-03: 1   # Fornecedores não priorizados por criticidade
+  GV.SC-04: 0   # Avaliações de fornecedores não realizadas
+  GV.SC-05: 0   # Requisitos de segurança na cadeia não estabelecidos
+  GV.SC-06: 1   # Due diligence básica antes de contratos
+  GV.SC-07: 1   # Riscos de fornecedores parcialmente identificados
+  GV.SC-08: 0   # Fornecedores excluídos do planeamento de incidentes
+  GV.SC-09: 0   # Práticas de segurança da cadeia não integradas
+  GV.SC-10: 0   # Sem planos para fim de relação com fornecedores
+
+  # ── IDENTIFY ─────────────────────────────────────────────────
+  ID.AM-01: 3   # Inventário de hardware mantido
+  ID.AM-02: 3   # Inventário de software mantido
+  ID.AM-03: 2   # Representações de rede parcialmente atualizadas
+  ID.AM-04: 1   # Inventário de serviços de fornecedores incompleto
+  ID.AM-05: 2   # Priorização de ativos em progresso
+  ID.AM-07: 1   # Inventário de dados incipiente
+  ID.AM-08: 2   # Gestão do ciclo de vida parcialmente implementada
+
+  ID.RA-01: 2   # Vulnerabilidades identificadas, mas não sistematicamente
+  ID.RA-02: 2   # Inteligência de ameaças recebida pontualmente
+  ID.RA-03: 2   # Ameaças internas/externas parcialmente documentadas
+  ID.RA-04: 1   # Impactos estimados sem metodologia formal
+  ID.RA-05: 1   # Análise de risco inerente não realizada sistematicamente
+  ID.RA-06: 2   # Respostas a riscos priorizadas informalmente
+  ID.RA-07: 1   # Gestão de alterações básica
+  ID.RA-08: 1   # Processo de divulgação de vulnerabilidades incipiente
+  ID.RA-09: 0   # Autenticidade de hardware/software não avaliada
+  ID.RA-10: 0   # Fornecedores críticos não avaliados antes da aquisição
+
+  ID.IM-01: 2   # Melhorias identificadas após avaliações
+  ID.IM-02: 1   # Testes de segurança realizados ocasionalmente
+  ID.IM-03: 1   # Melhorias dos processos operacionais não sistematizadas
+  ID.IM-04: 1   # Lições aprendidas raramente incorporadas nos planos
+
+  # ── PROTECT ──────────────────────────────────────────────────
+  PR.AA-01: 3   # Gestão de identidades e credenciais implementada
+  PR.AA-02: 2   # Verificação de identidade parcial
+  PR.AA-03: 3   # MFA implementado para a maioria dos acessos
+  PR.AA-04: 2   # Asserções de identidade parcialmente protegidas
+  PR.AA-05: 3   # Permissões de acesso definidas por política
+  PR.AA-06: 2   # Acesso físico controlado, monitorização em progresso
+
+  PR.AT-01: 2   # Formação de sensibilização anual para todos
+  PR.AT-02: 1   # Formação especializada pontual
+
+  PR.DS-01: 3   # Dados em repouso encriptados
+  PR.DS-02: 3   # Dados em trânsito encriptados (TLS)
+  PR.DS-10: 1   # Proteção de dados em uso não implementada
+  PR.DS-11: 3   # Backups realizados, testados anualmente
+
+  PR.PS-01: 3   # Gestão de configurações implementada (baselines)
+  PR.PS-02: 3   # Gestão de patches automatizada
+  PR.PS-03: 2   # Ciclo de vida de hardware controlado
+  PR.PS-04: 3   # Logs gerados e centralizados (SIEM básico)
+  PR.PS-05: 2   # Controlo de software não autorizado parcial
+  PR.PS-06: 1   # Práticas de desenvolvimento seguro incipientes
+
+  PR.IR-01: 3   # Segmentação de redes implementada
+  PR.IR-02: 2   # Proteção ambiental (UPS, controlo de temperatura) básica
+  PR.IR-03: 2   # Mecanismos de resiliência em progresso
+  PR.IR-04: 2   # Capacidade de recursos adequada na maioria dos casos
+
+  # ── DETECT ───────────────────────────────────────────────────
+  DE.CM-01: 3   # Monitorização de rede implementada
+  DE.CM-02: 1   # Monitorização física limitada
+  DE.CM-03: 2   # Monitorização de atividade de utilizadores parcial
+  DE.CM-06: 1   # Atividades de fornecedores externos pouco monitorizadas
+  DE.CM-09: 2   # Hardware e software em produção monitorizados
+
+  DE.AE-02: 2   # Análise de eventos adversos realizada
+  DE.AE-03: 2   # Correlação de fontes múltiplas (SIEM básico)
+  DE.AE-04: 2   # Impacto estimado para eventos conhecidos
+  DE.AE-06: 2   # Informações partilhadas com equipa de segurança
+  DE.AE-07: 1   # Integração de threat intelligence incipiente
+  DE.AE-08: 2   # Critérios de declaração de incidentes definidos
+
+  # ── RESPOND ──────────────────────────────────────────────────
+  RS.MA-01: 2   # Plano de resposta existe mas raramente testado
+  RS.MA-02: 2   # Triagem de relatórios de incidentes funcional
+  RS.MA-03: 2   # Categorização e priorização definidas
+  RS.MA-04: 2   # Escalonamento definido mas parcialmente testado
+  RS.MA-05: 1   # Critérios de recuperação não formalizados
+
+  RS.AN-03: 2   # Análise pós-incidente realizada
+  RS.AN-06: 2   # Ações durante investigação registadas
+  RS.AN-07: 1   # Análise de causa raiz ocasional
+  RS.AN-08: 2   # Caracterização de incidentes definida
+
+  RS.CO-02: 2   # Notificação interna de incidentes funcional
+  RS.CO-03: 1   # Partilha com partes externas limitada
+
+  RS.MI-01: 2   # Contenção de incidentes com procedimentos definidos
+  RS.MI-02: 2   # Erradicação de incidentes com procedimentos definidos
+
+  # ── RECOVER ──────────────────────────────────────────────────
+  RC.RP-01: 2   # Plano de recuperação existe
+  RC.RP-02: 2   # Ações de recuperação priorizadas
+  RC.RP-03: 2   # Integridade de backups verificada periodicamente
+  RC.RP-04: 1   # Missões críticas pós-incidente não totalmente consideradas
+  RC.RP-05: 2   # Integridade de ativos restaurados verificada
+  RC.RP-06: 1   # Critérios de fim de recuperação não formalizados
+
+  RC.CO-03: 2   # Comunicação de recuperação às partes interessadas
+  RC.CO-04: 1   # Atualizações públicas não formalizadas
