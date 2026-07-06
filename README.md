@@ -21,6 +21,8 @@ Casos de uso reais:
 
 > ⚠️ **Nota importante:** A estrutura de categorias e subcategorias do CSF 2.0 nesta ferramenta é uma aproximação com base na documentação pública disponível. **Deve ser verificada e validada face à fonte oficial do NIST: [nist.gov/cyberframework](https://www.nist.gov/cyberframework).** Não use esta ferramenta como substituto de uma avaliação formal certificada.
 
+> **Framework structure based on NIST CSF 2.0 (6 functions, 22 categories, 106 subcategories). Verify against the official NIST CSF 2.0 Reference Tool at [nist.gov/cyberframework](https://www.nist.gov/cyberframework).**
+
 ---
 
 ## Saída gerada

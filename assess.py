@@ -22,72 +22,81 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # ---------------------------------------------------------------------------
-# Estrutura oficial do NIST CSF 2.0 (aproximada — verificar em nist.gov/cyberframework)
+# Estrutura do NIST CSF 2.0 — 6 Funções, 22 Categorias, 106 Subcategorias
+# Fonte de referência: NIST CSF 2.0 Reference Tool (nist.gov/cyberframework)
+# Os identificadores marcados VERIFICAR têm numeração não-contígua face ao CSF 1.1;
+# confirmar na NIST CSF 2.0 Reference Tool JSON antes de usar em avaliações formais.
 # ---------------------------------------------------------------------------
 CSF_STRUCTURE = {
     "GOVERN": {
         "description": "Establish and monitor the organization's cybersecurity risk management strategy, expectations, and policy",
         "abbreviation": "GV",
         "categories": {
+            # GV.OC — Organizational Context (5 subcategorias: GV.OC-01 a GV.OC-05)
             "GV.OC": {
                 "name": "Organizational Context",
                 "subcategories": {
                     "GV.OC-01": "The organizational mission is understood and informs cybersecurity risk management",
-                    "GV.OC-02": "Internal and external stakeholder needs, expectations, and requirements are understood",
-                    "GV.OC-03": "Legal, regulatory, and contractual requirements regarding cybersecurity are understood",
-                    "GV.OC-04": "Critical objectives, capabilities, and services are understood",
-                    "GV.OC-05": "Outcomes, capabilities, and services that the organization depends on are understood",
+                    "GV.OC-02": "Internal and external stakeholder needs, expectations, and requirements regarding cybersecurity — including legal, regulatory, and contractual requirements — are understood",
+                    "GV.OC-03": "Legal, regulatory, and contractual requirements regarding cybersecurity — including privacy and civil liberties obligations — are understood and managed",
+                    "GV.OC-04": "Critical objectives, capabilities, and services that external stakeholders depend on or expect from the organization are understood and communicated",
+                    "GV.OC-05": "Outcomes, capabilities, and services that the organization depends on are understood and communicated",
                 },
             },
+            # GV.RM — Risk Management Strategy (7 subcategorias: GV.RM-01 a GV.RM-07)
             "GV.RM": {
                 "name": "Risk Management Strategy",
                 "subcategories": {
                     "GV.RM-01": "Risk management objectives are established and agreed to by organizational stakeholders",
-                    "GV.RM-02": "Risk appetite and risk tolerance statements are established and communicated",
-                    "GV.RM-03": "Cybersecurity risk management activities and outcomes are included in enterprise risk management processes",
-                    "GV.RM-04": "Strategic direction that describes appropriate risk response options is established",
-                    "GV.RM-05": "Lines of communication across the organization are established for cybersecurity risks",
-                    "GV.RM-06": "A standardized method for calculating, documenting, categorizing, and prioritizing cybersecurity risks is established",
-                    "GV.RM-07": "Strategic opportunities are characterized and included in cybersecurity risk discussions",
+                    "GV.RM-02": "Risk appetite and risk tolerance statements are established, communicated, and maintained",
+                    "GV.RM-03": "Cybersecurity risk management activities and outcomes are included in enterprise risk management (ERM) processes",
+                    "GV.RM-04": "Strategic direction that describes appropriate risk response options is established and communicated",
+                    "GV.RM-05": "Lines of communication across the organization are established for cybersecurity risks, including risks from suppliers and other third parties",
+                    "GV.RM-06": "A standardized method for calculating, documenting, categorizing, and prioritizing cybersecurity risks is established and communicated",
+                    "GV.RM-07": "Strategic opportunities (i.e., positive risks) are characterized and are included in organizational cybersecurity risk discussions",
                 },
             },
+            # GV.RR — Roles, Responsibilities, and Authorities (4 subcategorias: GV.RR-01 a GV.RR-04)
             "GV.RR": {
                 "name": "Roles, Responsibilities, and Authorities",
                 "subcategories": {
-                    "GV.RR-01": "Organizational leadership is responsible and accountable for cybersecurity risk",
-                    "GV.RR-02": "Roles and responsibilities for cybersecurity risk management are established",
-                    "GV.RR-03": "Adequate resources are allocated commensurate with the cybersecurity risk strategy",
+                    "GV.RR-01": "Organizational leadership is responsible and accountable for cybersecurity risk and fosters a culture that is risk-aware, ethical, and continually improving",
+                    "GV.RR-02": "Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced",
+                    "GV.RR-03": "Adequate resources are allocated commensurate with the cybersecurity risk strategy, roles, responsibilities, and policies",
                     "GV.RR-04": "Cybersecurity is included in human resources practices",
                 },
             },
+            # GV.PO — Policy (2 subcategorias: GV.PO-01 a GV.PO-02)
             "GV.PO": {
                 "name": "Policy",
                 "subcategories": {
-                    "GV.PO-01": "Policy for managing cybersecurity risks is established based on organizational context",
-                    "GV.PO-02": "Policy for managing cybersecurity risks is reviewed, updated, communicated, and enforced",
+                    "GV.PO-01": "Policy for managing cybersecurity risks is established based on organizational context, cybersecurity strategy, and priorities and is communicated and enforced",
+                    "GV.PO-02": "Policy for managing cybersecurity risks is reviewed, updated, communicated, and enforced to reflect changes in requirements, threats, technology, and organizational mission",
                 },
             },
+            # GV.OV — Oversight (3 subcategorias: GV.OV-01 a GV.OV-03)
             "GV.OV": {
                 "name": "Oversight",
                 "subcategories": {
-                    "GV.OV-01": "Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy",
-                    "GV.OV-02": "The cybersecurity risk management strategy is reviewed and adjusted to ensure coverage of organizational requirements",
-                    "GV.OV-03": "Organizational cybersecurity risk management performance is evaluated and reviewed",
+                    "GV.OV-01": "Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy and direction",
+                    "GV.OV-02": "The cybersecurity risk management strategy is reviewed and adjusted to reflect changes in the organization's mission, stakeholder requirements, threats, and technology landscape",
+                    "GV.OV-03": "Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed",
                 },
             },
+            # GV.SC — Cybersecurity Supply Chain Risk Management (10 subcategorias: GV.SC-01 a GV.SC-10)
             "GV.SC": {
                 "name": "Cybersecurity Supply Chain Risk Management",
                 "subcategories": {
-                    "GV.SC-01": "A cybersecurity supply chain risk management program is established",
-                    "GV.SC-02": "Cybersecurity requirements are established for suppliers and third-party partners",
-                    "GV.SC-03": "Suppliers and third-party partners are prioritized by criticality",
-                    "GV.SC-04": "Suppliers and third-party partners are assessed routinely to confirm they meet contractual requirements",
-                    "GV.SC-05": "Requirements to address cybersecurity risks in supply chains are established",
-                    "GV.SC-06": "Planning and due diligence are performed to reduce risks before entering formal supplier relationships",
-                    "GV.SC-07": "The risks posed by a supplier, their products and services, and other third parties are understood",
-                    "GV.SC-08": "Relevant suppliers and third-party partners are included in incident planning",
-                    "GV.SC-09": "Supply chain security practices are integrated into cybersecurity and enterprise risk management programs",
-                    "GV.SC-10": "Cybersecurity supply chain risk management plans include provisions for activities after the supplier relationship ends",
+                    "GV.SC-01": "A cybersecurity supply chain risk management program, strategy, objectives, policies, and processes are established and agreed to by organizational stakeholders",
+                    "GV.SC-02": "Cybersecurity requirements are established for suppliers and other third-party partners to implement and monitor throughout the supply chain",
+                    "GV.SC-03": "Suppliers and other third-party partners are prioritized by criticality",
+                    "GV.SC-04": "Suppliers and other third-party partners are assessed routinely to confirm that they are meeting their contractual obligations",
+                    "GV.SC-05": "Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and third-party partners",
+                    "GV.SC-06": "Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party partner relationships",
+                    "GV.SC-07": "The risks posed by a supplier, their products and services, and other third parties are understood, recorded, prioritized, assessed, responded to, and monitored over the course of the relationship",
+                    "GV.SC-08": "Relevant suppliers and other third-party partners are included in incident planning, response, and recovery activities",
+                    "GV.SC-09": "Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout the technology product and service life cycle",
+                    "GV.SC-10": "Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement",
                 },
             },
         },
@@ -96,40 +105,44 @@ CSF_STRUCTURE = {
         "description": "Understand the organization's current cybersecurity risks to systems, people, assets, data, and capabilities",
         "abbreviation": "ID",
         "categories": {
+            # ID.AM — Asset Management (7 subcategorias; ID.AM-06 não existe no CSF 2.0)
             "ID.AM": {
                 "name": "Asset Management",
                 "subcategories": {
                     "ID.AM-01": "Inventories of hardware managed by the organization are maintained",
                     "ID.AM-02": "Inventories of software, services, and systems managed by the organization are maintained",
-                    "ID.AM-03": "Representations of authorized network communication and data flows are maintained",
+                    "ID.AM-03": "Representations of the organization's authorized network communication and internal and external network data flows are maintained",
                     "ID.AM-04": "Inventories of services provided by suppliers are maintained",
-                    "ID.AM-05": "Assets are prioritized based on classification, criticality, resources, and impact",
-                    "ID.AM-07": "Inventories of data and corresponding metadata for designated data types are maintained",
-                    "ID.AM-08": "Systems, hardware, software, services, and data are managed throughout their life cycles",
+                    "ID.AM-05": "Assets are prioritized based on classification, criticality, resources, and impact on the achievement of mission or business objectives",
+                    # ID.AM-06 não existe no CSF 2.0 (descontinuado face ao CSF 1.1)
+                    "ID.AM-07": "Inventories of data and corresponding metadata for designated data types are maintained",  # VERIFICAR nist.gov/cyberframework
+                    "ID.AM-08": "Systems, hardware, software, services, and data are managed throughout their life cycles",  # VERIFICAR nist.gov/cyberframework
                 },
             },
+            # ID.RA — Risk Assessment (10 subcategorias: ID.RA-01 a ID.RA-10)
             "ID.RA": {
                 "name": "Risk Assessment",
                 "subcategories": {
                     "ID.RA-01": "Vulnerabilities in assets are identified, validated, and recorded",
                     "ID.RA-02": "Cyber threat intelligence is received from information sharing forums and sources",
                     "ID.RA-03": "Internal and external threats to the organization are identified and recorded",
-                    "ID.RA-04": "Potential impacts and likelihoods of threats exploiting vulnerabilities are identified",
-                    "ID.RA-05": "Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk",
+                    "ID.RA-04": "Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded",
+                    "ID.RA-05": "Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response priorities",
                     "ID.RA-06": "Risk responses are chosen, prioritized, planned, tracked, and communicated",
-                    "ID.RA-07": "Changes and exceptions are managed",
+                    "ID.RA-07": "Changes and exceptions are managed, assessed for risk impact, prioritized, and approved",
                     "ID.RA-08": "Processes for receiving, analyzing, and responding to vulnerability disclosures are established",
-                    "ID.RA-09": "The authenticity and integrity of hardware and software are assessed prior to acquisition",
+                    "ID.RA-09": "The authenticity and integrity of hardware and software are assessed prior to acquisition and use",
                     "ID.RA-10": "Critical suppliers are assessed prior to acquisition",
                 },
             },
+            # ID.IM — Improvement (4 subcategorias: ID.IM-01 a ID.IM-04)
             "ID.IM": {
                 "name": "Improvement",
                 "subcategories": {
                     "ID.IM-01": "Improvements are identified from evaluations",
-                    "ID.IM-02": "Improvements are identified from security tests and exercises",
-                    "ID.IM-03": "Improvements are identified from execution of operational processes",
-                    "ID.IM-04": "Incident response plans and other cybersecurity plans incorporate lessons learned",
+                    "ID.IM-02": "Improvements are identified from security tests and exercises, including those done in coordination with suppliers and relevant third parties",
+                    "ID.IM-03": "Improvements are identified from execution of operational processes, procedures, and activities",
+                    "ID.IM-04": "Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved",
                 },
             },
         },
@@ -138,6 +151,7 @@ CSF_STRUCTURE = {
         "description": "Use safeguards to prevent or reduce cybersecurity risks",
         "abbreviation": "PR",
         "categories": {
+            # PR.AA — Identity Management, Authentication, and Access Control (6 subcategorias: PR.AA-01 a PR.AA-06)
             "PR.AA": {
                 "name": "Identity Management, Authentication, and Access Control",
                 "subcategories": {
@@ -145,26 +159,30 @@ CSF_STRUCTURE = {
                     "PR.AA-02": "Identities are proofed and bound to credentials based on the context of interactions",
                     "PR.AA-03": "Users, services, and hardware are authenticated",
                     "PR.AA-04": "Identity assertions are protected, conveyed, and verified",
-                    "PR.AA-05": "Access permissions, entitlements, and authorizations are defined in a policy",
+                    "PR.AA-05": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties",
                     "PR.AA-06": "Physical access to assets is managed, monitored, and enforced commensurate with risk",
                 },
             },
+            # PR.AT — Awareness and Training (2 subcategorias: PR.AT-01 a PR.AT-02)
             "PR.AT": {
                 "name": "Awareness and Training",
                 "subcategories": {
-                    "PR.AT-01": "Personnel are provided with awareness and training so they can perform their cybersecurity-related tasks",
-                    "PR.AT-02": "Individuals in specialized roles are provided with awareness and training",
+                    "PR.AT-01": "Personnel are provided with awareness and training so that they can perform their cybersecurity-related tasks",
+                    "PR.AT-02": "Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant cybersecurity tasks",
                 },
             },
+            # PR.DS — Data Security (4 subcategorias; salta de -02 para -10 no CSF 2.0)
+            # NOTA: PR.DS-03 a PR.DS-09 não existem no CSF 2.0 (renumeração face ao CSF 1.1)
             "PR.DS": {
                 "name": "Data Security",
                 "subcategories": {
                     "PR.DS-01": "The confidentiality, integrity, and availability of data-at-rest are protected",
                     "PR.DS-02": "The confidentiality, integrity, and availability of data-in-transit are protected",
-                    "PR.DS-10": "The confidentiality, integrity, and availability of data-in-use are protected",
-                    "PR.DS-11": "Backups of data are created, protected, maintained, and tested",
+                    "PR.DS-10": "The confidentiality, integrity, and availability of data-in-use are protected",  # VERIFICAR nist.gov/cyberframework
+                    "PR.DS-11": "Backups of data are created, protected, maintained, and tested",  # VERIFICAR nist.gov/cyberframework
                 },
             },
+            # PR.PS — Platform Security (6 subcategorias: PR.PS-01 a PR.PS-06)
             "PR.PS": {
                 "name": "Platform Security",
                 "subcategories": {
@@ -173,9 +191,10 @@ CSF_STRUCTURE = {
                     "PR.PS-03": "Hardware is maintained, replaced, and removed commensurate with risk",
                     "PR.PS-04": "Log records are generated and made available for continuous monitoring",
                     "PR.PS-05": "Installation and execution of unauthorized software are prevented",
-                    "PR.PS-06": "Secure software development practices are integrated into the software development life cycle",
+                    "PR.PS-06": "Secure software development practices are integrated, and their performance is monitored throughout the software development life cycle",
                 },
             },
+            # PR.IR — Technology Infrastructure Resilience (4 subcategorias: PR.IR-01 a PR.IR-04)
             "PR.IR": {
                 "name": "Technology Infrastructure Resilience",
                 "subcategories": {
@@ -191,25 +210,29 @@ CSF_STRUCTURE = {
         "description": "Find and analyze possible cybersecurity attacks and compromises",
         "abbreviation": "DE",
         "categories": {
+            # DE.CM — Continuous Monitoring (5 subcategorias; numeração não-contígua no CSF 2.0)
+            # NOTA: DE.CM-04, -05, -07, -08 não existem no CSF 2.0
             "DE.CM": {
                 "name": "Continuous Monitoring",
                 "subcategories": {
                     "DE.CM-01": "Networks and network services are monitored to find potentially adverse events",
                     "DE.CM-02": "The physical environment is monitored to find potentially adverse events",
                     "DE.CM-03": "Personnel activity and technology usage are monitored to find potentially adverse events",
-                    "DE.CM-06": "External service provider activities and services are monitored to find potentially adverse events",
-                    "DE.CM-09": "Computing hardware and software, runtime environments, and their data are monitored",
+                    "DE.CM-06": "External service provider activities and services are monitored to find potentially adverse events",  # VERIFICAR nist.gov/cyberframework
+                    "DE.CM-09": "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events",  # VERIFICAR nist.gov/cyberframework
                 },
             },
+            # DE.AE — Adverse Event Analysis (6 subcategorias; numeração não-contígua no CSF 2.0)
+            # NOTA: DE.AE-01 e DE.AE-05 não existem no CSF 2.0
             "DE.AE": {
                 "name": "Adverse Event Analysis",
                 "subcategories": {
-                    "DE.AE-02": "Potentially adverse events are analyzed to better characterize them",
-                    "DE.AE-03": "Information is correlated from multiple sources",
-                    "DE.AE-04": "The estimated impact and scope of adverse events are understood",
-                    "DE.AE-06": "Information on adverse events is provided to authorized staff and tools",
-                    "DE.AE-07": "Cyber threat intelligence and other contextual information are integrated into the analysis",
-                    "DE.AE-08": "Incidents are declared when adverse events meet the defined incident criteria",
+                    "DE.AE-02": "Potentially adverse events are analyzed to better characterize them and detect attack sequences",  # VERIFICAR nist.gov/cyberframework
+                    "DE.AE-03": "Information is correlated from multiple sources",  # VERIFICAR nist.gov/cyberframework
+                    "DE.AE-04": "The estimated impact and scope of adverse events are understood",  # VERIFICAR nist.gov/cyberframework
+                    "DE.AE-06": "Information on adverse events is provided to authorized staff and tools",  # VERIFICAR nist.gov/cyberframework
+                    "DE.AE-07": "Cyber threat intelligence and other contextual information are integrated into the analysis of adverse events",  # VERIFICAR nist.gov/cyberframework
+                    "DE.AE-08": "Incidents are declared when adverse events meet the defined incident criteria",  # VERIFICAR nist.gov/cyberframework
                 },
             },
         },
@@ -218,6 +241,7 @@ CSF_STRUCTURE = {
         "description": "Take action regarding a detected cybersecurity incident",
         "abbreviation": "RS",
         "categories": {
+            # RS.MA — Incident Management (5 subcategorias: RS.MA-01 a RS.MA-05)
             "RS.MA": {
                 "name": "Incident Management",
                 "subcategories": {
@@ -228,22 +252,27 @@ CSF_STRUCTURE = {
                     "RS.MA-05": "The criteria for initiating incident recovery are applied",
                 },
             },
+            # RS.AN — Incident Analysis (4 subcategorias; numeração não-contígua no CSF 2.0)
+            # NOTA: RS.AN-01, -02, -04, -05 não existem no CSF 2.0
             "RS.AN": {
                 "name": "Incident Analysis",
                 "subcategories": {
-                    "RS.AN-03": "Analysis is performed to establish what has taken place during an incident and the root cause of the incident",
-                    "RS.AN-06": "Actions performed during an investigation are recorded",
-                    "RS.AN-07": "Cause analysis is performed to determine the root cause of incidents",
-                    "RS.AN-08": "An incident is characterized",
+                    "RS.AN-03": "Analysis is performed to establish what has taken place during an incident and the root cause of the incident",  # VERIFICAR nist.gov/cyberframework
+                    "RS.AN-06": "Actions performed during an investigation are recorded, and the records' integrity and provenance are preserved",  # VERIFICAR nist.gov/cyberframework
+                    "RS.AN-07": "Cause analysis is performed to determine the root cause of incidents",  # VERIFICAR nist.gov/cyberframework
+                    "RS.AN-08": "An incident is characterized",  # VERIFICAR nist.gov/cyberframework
                 },
             },
+            # RS.CO — Incident Response Reporting and Communication (2 subcategorias; RS.CO-01 não existe)
+            # NOTA: RS.CO-01 não existe no CSF 2.0
             "RS.CO": {
                 "name": "Incident Response Reporting and Communication",
                 "subcategories": {
-                    "RS.CO-02": "Internal and external stakeholders are notified of incidents in a timely manner",
-                    "RS.CO-03": "Information is shared with designated internal and external stakeholders",
+                    "RS.CO-02": "Internal and external stakeholders are notified of incidents in a timely manner as required by applicable requirements",  # VERIFICAR nist.gov/cyberframework
+                    "RS.CO-03": "Information is shared with designated internal and external stakeholders as established in the incident response plan",  # VERIFICAR nist.gov/cyberframework
                 },
             },
+            # RS.MI — Incident Mitigation (2 subcategorias: RS.MI-01 a RS.MI-02)
             "RS.MI": {
                 "name": "Incident Mitigation",
                 "subcategories": {
@@ -257,22 +286,25 @@ CSF_STRUCTURE = {
         "description": "Restore assets and operations that were impacted by a cybersecurity incident",
         "abbreviation": "RC",
         "categories": {
+            # RC.RP — Incident Recovery Plan Execution (6 subcategorias: RC.RP-01 a RC.RP-06)
             "RC.RP": {
                 "name": "Incident Recovery Plan Execution",
                 "subcategories": {
-                    "RC.RP-01": "The recovery portion of the incident response plan is executed once initiated from the RESPOND function",
+                    "RC.RP-01": "The recovery portion of the incident response plan is executed once initiated from the RESPOND function activities",
                     "RC.RP-02": "Recovery actions are selected, scoped, prioritized, and performed",
                     "RC.RP-03": "The integrity of backups and other restoration assets is verified before using them for restoration",
-                    "RC.RP-04": "Critical mission functions and cybersecurity risk management are considered to establish post-incident norms",
-                    "RC.RP-05": "The integrity of restored assets is verified, systems and services are restored",
-                    "RC.RP-06": "The end of incident recovery is declared based on criteria, and documented",
+                    "RC.RP-04": "Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms",
+                    "RC.RP-05": "The integrity of restored assets is verified, systems and services are restored, and normal operating status is confirmed",
+                    "RC.RP-06": "The end of incident recovery is declared based on criteria, and the incident's documentation is completed",
                 },
             },
+            # RC.CO — Incident Recovery Communication (2 subcategorias; RC.CO-01 e -02 não existem)
+            # NOTA: RC.CO-01 e RC.CO-02 não existem no CSF 2.0
             "RC.CO": {
                 "name": "Incident Recovery Communication",
                 "subcategories": {
-                    "RC.CO-03": "Recovery activities and progress in restoring operational capabilities are communicated to stakeholders",
-                    "RC.CO-04": "Public updates on incident recovery are shared using approved methods and messaging",
+                    "RC.CO-03": "Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders as well as executive and management teams",  # VERIFICAR nist.gov/cyberframework
+                    "RC.CO-04": "Public updates on incident recovery are shared using approved methods and messaging",  # VERIFICAR nist.gov/cyberframework
                 },
             },
         },
