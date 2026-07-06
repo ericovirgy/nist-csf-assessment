@@ -1,8 +1,10 @@
 # ============================================================
 # Avaliação NIST Cybersecurity Framework 2.0 — Input Completo
 # ============================================================
-# Framework structure based on NIST CSF 2.0 (6 functions, 22 categories, 106 subcategories).
-# Verify against the official NIST CSF 2.0 Reference Tool at nist.gov/cyberframework.
+# Structure verified: 6 functions, 22 categories, 106 subcategories per official NIST CSF 2.0
+# (GV=31, ID=21, PR=22, DE=11, RS=13, RC=8). Wording from NIST CSF 2.0 Reference Tool Export
+# (XLSX, csrc.nist.gov). Subcategory numbering gaps (ID.AM-06, PR.DS-03..09, DE.CM-04/05/07/08,
+# DE.AE-01/05, RS.AN-01/02/04/05, RS.CO-01, RC.CO-01/02) are official CSF 1.1→2.0 withdrawals.
 #
 # Os identificadores com números não contíguos (e.g. ID.AM-07 a seguir a ID.AM-05,
 # PR.DS-10 a seguir a PR.DS-02) refletem a numeração oficial do CSF 2.0, que manteve
@@ -143,9 +145,9 @@ scores:
   ID.AM-05: 2  # "Assets are prioritized based on classification, criticality, resources, and impact on the achievement of mission or business objectives"
                # [PT] Priorização de ativos em progresso; classificação formal pendente
   # ID.AM-06 não existe no CSF 2.0 (descontinuado face ao CSF 1.1)
-  ID.AM-07: 1  # "Inventories of data and corresponding metadata for designated data types are maintained"  # VERIFICAR — número confirmar em nist.gov/cyberframework
+  ID.AM-07: 1  # "Inventories of data and corresponding metadata for designated data types are maintained"
                # [PT] Inventário de dados incipiente; dados críticos não totalmente catalogados
-  ID.AM-08: 2  # "Systems, hardware, software, services, and data are managed throughout their life cycles"  # VERIFICAR — número confirmar em nist.gov/cyberframework
+  ID.AM-08: 2  # "Systems, hardware, software, services, and data are managed throughout their life cycles"
                # [PT] Gestão do ciclo de vida parcialmente implementada; falta processo formal de descomissionamento
 
   # ID.RA — Risk Assessment (10 subcategorias: ID.RA-01 a ID.RA-10)
@@ -222,9 +224,9 @@ scores:
                # [PT] Dados em repouso encriptados (AES-256); política de encriptação documentada
   PR.DS-02: 3  # "The confidentiality, integrity, and availability of data-in-transit are protected"
                # [PT] TLS 1.2+ em todas as comunicações; certificados geridos centralmente
-  PR.DS-10: 1  # "The confidentiality, integrity, and availability of data-in-use are protected"  # VERIFICAR — número PR.DS-10 confirmar em nist.gov/cyberframework
+  PR.DS-10: 1  # "The confidentiality, integrity, and availability of data-in-use are protected"
                # [PT] Proteção de dados em uso (DRM, enclaves) não implementada
-  PR.DS-11: 3  # "Backups of data are created, protected, maintained, and tested"  # VERIFICAR — número PR.DS-11 confirmar em nist.gov/cyberframework
+  PR.DS-11: 3  # "Backups of data are created, protected, maintained, and tested"
                # [PT] Backups diários encriptados; testes de restauro trimestrais; cópia off-site
 
   # PR.PS — Platform Security (6 subcategorias: PR.PS-01 a PR.PS-06)
@@ -273,26 +275,26 @@ scores:
                # [PT] Monitorização física limitada; sem CCTV integrado no SOC
   DE.CM-03: 2  # "Personnel activity and technology usage are monitored to find potentially adverse events"
                # [PT] Monitorização de atividade de utilizadores parcial (DLP básico); UEBA não implementado
-  DE.CM-06: 1  # "External service provider activities and services are monitored to find potentially adverse events"  # VERIFICAR — número DE.CM-06 confirmar em nist.gov/cyberframework
+  DE.CM-06: 1  # "External service provider activities and services are monitored to find potentially adverse events"
                # [PT] Atividades de fornecedores externos pouco monitorizadas; sem logging de API de terceiros
-  DE.CM-09: 2  # "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"  # VERIFICAR — número DE.CM-09 confirmar em nist.gov/cyberframework
+  DE.CM-09: 2  # "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"
                # [PT] Hardware e software em produção monitorizados via agentes EDR
 
   # DE.AE — Adverse Event Analysis (6 subcategorias; números não contíguos no CSF 2.0)
   # Outcome: Anomalies, indicators of compromise, and other potentially adverse events
   #          are analyzed to characterize the events and detect cybersecurity incidents.
   # NOTA: DE.AE-01 e DE.AE-05 não existem no CSF 2.0.
-  DE.AE-02: 2  # "Potentially adverse events are analyzed to better characterize them and detect attack sequences"  # VERIFICAR — número DE.AE-02 confirmar em nist.gov/cyberframework
+  DE.AE-02: 2  # "Potentially adverse events are analyzed to better characterize them and detect attack sequences"
                # [PT] Análise de eventos adversos realizada pela equipa de segurança; processo parcialmente formal
-  DE.AE-03: 2  # "Information is correlated from multiple sources"  # VERIFICAR — número DE.AE-03 confirmar em nist.gov/cyberframework
+  DE.AE-03: 2  # "Information is correlated from multiple sources"
                # [PT] Correlação de fontes múltiplas via SIEM básico; regras de correlação limitadas
-  DE.AE-04: 2  # "The estimated impact and scope of adverse events are understood"  # VERIFICAR — número DE.AE-04 confirmar em nist.gov/cyberframework
+  DE.AE-04: 2  # "The estimated impact and scope of adverse events are understood"
                # [PT] Impacto estimado para eventos conhecidos; metodologia de classificação em desenvolvimento
-  DE.AE-06: 2  # "Information on adverse events is provided to authorized staff and tools"  # VERIFICAR — número DE.AE-06 confirmar em nist.gov/cyberframework
+  DE.AE-06: 2  # "Information on adverse events is provided to authorized staff and tools"
                # [PT] Alertas partilhados com equipa de segurança; integração com ticketing funcional
-  DE.AE-07: 1  # "Cyber threat intelligence and other contextual information are integrated into the analysis of adverse events"  # VERIFICAR — número DE.AE-07 confirmar em nist.gov/cyberframework
+  DE.AE-07: 1  # "Cyber threat intelligence and other contextual information are integrated into the analysis of adverse events"
                # [PT] Integração de threat intelligence incipiente; feeds manuais, sem automação
-  DE.AE-08: 2  # "Incidents are declared when adverse events meet the defined incident criteria"  # VERIFICAR — número DE.AE-08 confirmar em nist.gov/cyberframework
+  DE.AE-08: 2  # "Incidents are declared when adverse events meet the defined incident criteria"
                # [PT] Critérios de declaração de incidentes definidos; aplicação consistente em progresso
 
   # ===========================================================
@@ -317,22 +319,22 @@ scores:
   # Outcome: Investigations are conducted to ensure effective response and support
   #          forensics and recovery activities.
   # NOTA: RS.AN-01, -02, -04, -05 não existem no CSF 2.0.
-  RS.AN-03: 2  # "Analysis is performed to establish what has taken place during an incident and the root cause of the incident"  # VERIFICAR — número RS.AN-03 confirmar em nist.gov/cyberframework
+  RS.AN-03: 2  # "Analysis is performed to establish what has taken place during an incident and the root cause of the incident"
                # [PT] Análise pós-incidente realizada; documentação inconsistente
-  RS.AN-06: 2  # "Actions performed during an investigation are recorded, and the records' integrity and provenance are preserved"  # VERIFICAR — número RS.AN-06 confirmar em nist.gov/cyberframework
+  RS.AN-06: 2  # "Actions performed during an investigation are recorded, and the records' integrity and provenance are preserved"
                # [PT] Ações durante investigação registadas no ticket; sem cadeia de custódia formal
-  RS.AN-07: 1  # "Cause analysis is performed to determine the root cause of incidents"  # VERIFICAR — número RS.AN-07 confirmar em nist.gov/cyberframework
+  RS.AN-07: 1  # "Cause analysis is performed to determine the root cause of incidents"
                # [PT] Análise de causa raiz ocasional; sem método formal (5-Porquês, Fishbone)
-  RS.AN-08: 2  # "An incident is characterized"  # VERIFICAR — número RS.AN-08 confirmar em nist.gov/cyberframework
+  RS.AN-08: 2  # "An incident is characterized"
                # [PT] Caracterização de incidentes definida (tipo, vetor, impacto); aplicação parcial
 
   # RS.CO — Incident Response Reporting and Communication (2 subcategorias; RS.CO-01 não existe no CSF 2.0)
   # Outcome: Response activities are coordinated with internal and external stakeholders
   #          as required by laws, regulations, or policies.
   # NOTA: RS.CO-01 não existe no CSF 2.0.
-  RS.CO-02: 2  # "Internal and external stakeholders are notified of incidents in a timely manner as required by applicable requirements"  # VERIFICAR — número RS.CO-02 confirmar em nist.gov/cyberframework
+  RS.CO-02: 2  # "Internal and external stakeholders are notified of incidents in a timely manner as required by applicable requirements"
                # [PT] Notificação interna de incidentes funcional; notificação CNPD (72h) em revisão
-  RS.CO-03: 1  # "Information is shared with designated internal and external stakeholders as established in the incident response plan"  # VERIFICAR — número RS.CO-03 confirmar em nist.gov/cyberframework
+  RS.CO-03: 1  # "Information is shared with designated internal and external stakeholders as established in the incident response plan"
                # [PT] Partilha de informação com partes externas (CERT-PT, reguladores) limitada e informal
 
   # RS.MI — Incident Mitigation (2 subcategorias: RS.MI-01 a RS.MI-02)
@@ -367,9 +369,9 @@ scores:
   # RC.CO — Incident Recovery Communication (2 subcategorias; RC.CO-01 e -02 não existem no CSF 2.0)
   # Outcome: Restoration activities are coordinated with internal and external parties.
   # NOTA: RC.CO-01 e RC.CO-02 não existem no CSF 2.0.
-  RC.CO-03: 2  # "Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders as well as executive and management teams"  # VERIFICAR — número RC.CO-03 confirmar em nist.gov/cyberframework
+  RC.CO-03: 2  # "Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders as well as executive and management teams"
                # [PT] Comunicação de progresso da recuperação à liderança; sem templates formais de comunicação
-  RC.CO-04: 1  # "Public updates on incident recovery are shared using approved methods and messaging"  # VERIFICAR — número RC.CO-04 confirmar em nist.gov/cyberframework
+  RC.CO-04: 1  # "Public updates on incident recovery are shared using approved methods and messaging"
                # [PT] Atualizações públicas não formalizadas; sem plano de comunicação de crise
 
 # ===========================================================

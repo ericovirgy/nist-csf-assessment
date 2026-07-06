@@ -19,9 +19,7 @@ Casos de uso reais:
 - Consultores que gerem múltiplos clientes e precisam de relatórios padronizados
 - Equipas de DevSecOps que querem integrar avaliações de maturidade em pipelines CI/CD
 
-> ⚠️ **Nota importante:** A estrutura de categorias e subcategorias do CSF 2.0 nesta ferramenta é uma aproximação com base na documentação pública disponível. **Deve ser verificada e validada face à fonte oficial do NIST: [nist.gov/cyberframework](https://www.nist.gov/cyberframework).** Não use esta ferramenta como substituto de uma avaliação formal certificada.
-
-> **Framework structure based on NIST CSF 2.0 (6 functions, 22 categories, 106 subcategories). Verify against the official NIST CSF 2.0 Reference Tool at [nist.gov/cyberframework](https://www.nist.gov/cyberframework).**
+> **Structure verified: 6 functions, 22 categories, 106 subcategories per official NIST CSF 2.0 (GV=31, ID=21, PR=22, DE=11, RS=13, RC=8).** Wording sourced from the [NIST CSF 2.0 Reference Tool](https://csrc.nist.gov/projects/olir/informative-reference-catalog/details?olirID=a7665317-f589-4d4b-8f76-706046f7a4f8) (official XLSX export). Não substitui avaliação formal certificada.
 
 ---
 

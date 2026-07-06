@@ -36,8 +36,8 @@
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
 | `GV.OC-01` | 3 | The organizational mission is understood and informs cybersecurity risk management |
-| `GV.OC-02` | 2 | Internal and external stakeholder needs, expectations, and requirements regarding cybersecurity — including legal, regulatory, and contractual requirements — are understood |
-| `GV.OC-03` | 3 | Legal, regulatory, and contractual requirements regarding cybersecurity — including privacy and civil liberties obligations — are understood and managed |
+| `GV.OC-02` | 2 | Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered |
+| `GV.OC-03` | 3 | Legal, regulatory, and contractual requirements regarding cybersecurity - including privacy and civil liberties obligations - are understood and managed |
 | `GV.OC-04` | 2 | Critical objectives, capabilities, and services that external stakeholders depend on or expect from the organization are understood and communicated |
 | `GV.OC-05` | 2 | Outcomes, capabilities, and services that the organization depends on are understood and communicated |
 
@@ -47,7 +47,7 @@
 |---|:---:|---|
 | `GV.RM-01` | 2 | Risk management objectives are established and agreed to by organizational stakeholders |
 | `GV.RM-02` | 1 | Risk appetite and risk tolerance statements are established, communicated, and maintained |
-| `GV.RM-03` | 1 | Cybersecurity risk management activities and outcomes are included in enterprise risk management (ERM) processes |
+| `GV.RM-03` | 1 | Cybersecurity risk management activities and outcomes are included in enterprise risk management processes |
 | `GV.RM-04` | 2 | Strategic direction that describes appropriate risk response options is established and communicated |
 | `GV.RM-05` | 2 | Lines of communication across the organization are established for cybersecurity risks, including risks from suppliers and other third parties |
 | `GV.RM-06` | 1 | A standardized method for calculating, documenting, categorizing, and prioritizing cybersecurity risks is established and communicated |
@@ -74,7 +74,7 @@
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
 | `GV.OV-01` | 2 | Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy and direction |
-| `GV.OV-02` | 1 | The cybersecurity risk management strategy is reviewed and adjusted to reflect changes in the organization's mission, stakeholder requirements, threats, and technology landscape |
+| `GV.OV-02` | 1 | The cybersecurity risk management strategy is reviewed and adjusted to ensure coverage of organizational requirements and risks |
 | `GV.OV-03` | 1 | Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed |
 
 #### GV.SC — Cybersecurity Supply Chain Risk Management (média: 0.50)
@@ -82,13 +82,13 @@
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
 | `GV.SC-01` | 1 | A cybersecurity supply chain risk management program, strategy, objectives, policies, and processes are established and agreed to by organizational stakeholders |
-| `GV.SC-02` | 1 | Cybersecurity requirements are established for suppliers and other third-party partners to implement and monitor throughout the supply chain |
-| `GV.SC-03` | 1 | Suppliers and other third-party partners are prioritized by criticality |
-| `GV.SC-04` | 0 | Suppliers and other third-party partners are assessed routinely to confirm that they are meeting their contractual obligations |
-| `GV.SC-05` | 0 | Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and third-party partners |
-| `GV.SC-06` | 1 | Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party partner relationships |
+| `GV.SC-02` | 1 | Cybersecurity roles and responsibilities for suppliers, customers, and partners are established, communicated, and coordinated internally and externally |
+| `GV.SC-03` | 1 | Cybersecurity supply chain risk management is integrated into cybersecurity and enterprise risk management, risk assessment, and improvement processes |
+| `GV.SC-04` | 0 | Suppliers are known and prioritized by criticality |
+| `GV.SC-05` | 0 | Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties |
+| `GV.SC-06` | 1 | Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party relationships |
 | `GV.SC-07` | 1 | The risks posed by a supplier, their products and services, and other third parties are understood, recorded, prioritized, assessed, responded to, and monitored over the course of the relationship |
-| `GV.SC-08` | 0 | Relevant suppliers and other third-party partners are included in incident planning, response, and recovery activities |
+| `GV.SC-08` | 0 | Relevant suppliers and other third parties are included in incident planning, response, and recovery activities |
 | `GV.SC-09` | 0 | Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout the technology product and service life cycle |
 | `GV.SC-10` | 0 | Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement |
 
@@ -105,7 +105,7 @@
 | `ID.AM-02` | 3 | Inventories of software, services, and systems managed by the organization are maintained |
 | `ID.AM-03` | 2 | Representations of the organization's authorized network communication and internal and external network data flows are maintained |
 | `ID.AM-04` | 1 | Inventories of services provided by suppliers are maintained |
-| `ID.AM-05` | 2 | Assets are prioritized based on classification, criticality, resources, and impact on the achievement of mission or business objectives |
+| `ID.AM-05` | 2 | Assets are prioritized based on classification, criticality, resources, and impact on the mission |
 | `ID.AM-07` | 1 | Inventories of data and corresponding metadata for designated data types are maintained |
 | `ID.AM-08` | 2 | Systems, hardware, software, services, and data are managed throughout their life cycles |
 
@@ -117,9 +117,9 @@
 | `ID.RA-02` | 2 | Cyber threat intelligence is received from information sharing forums and sources |
 | `ID.RA-03` | 2 | Internal and external threats to the organization are identified and recorded |
 | `ID.RA-04` | 1 | Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded |
-| `ID.RA-05` | 1 | Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response priorities |
+| `ID.RA-05` | 1 | Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response prioritization |
 | `ID.RA-06` | 2 | Risk responses are chosen, prioritized, planned, tracked, and communicated |
-| `ID.RA-07` | 1 | Changes and exceptions are managed, assessed for risk impact, prioritized, and approved |
+| `ID.RA-07` | 1 | Changes and exceptions are managed, assessed for risk impact, recorded, and tracked |
 | `ID.RA-08` | 1 | Processes for receiving, analyzing, and responding to vulnerability disclosures are established |
 | `ID.RA-09` | 0 | The authenticity and integrity of hardware and software are assessed prior to acquisition and use |
 | `ID.RA-10` | 0 | Critical suppliers are assessed prior to acquisition |
@@ -153,8 +153,8 @@
 
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
-| `PR.AT-01` | 2 | Personnel are provided with awareness and training so that they can perform their cybersecurity-related tasks |
-| `PR.AT-02` | 1 | Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant cybersecurity tasks |
+| `PR.AT-01` | 2 | Personnel are provided with awareness and training so that they possess the knowledge and skills to perform general tasks with cybersecurity risks in mind |
+| `PR.AT-02` | 1 | Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant tasks with cybersecurity risks in mind |
 
 #### PR.DS — Data Security (média: 2.50)
 
@@ -204,11 +204,11 @@
 
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
-| `DE.AE-02` | 2 | Potentially adverse events are analyzed to better characterize them and detect attack sequences |
+| `DE.AE-02` | 2 | Potentially adverse events are analyzed to better understand associated activities |
 | `DE.AE-03` | 2 | Information is correlated from multiple sources |
 | `DE.AE-04` | 2 | The estimated impact and scope of adverse events are understood |
 | `DE.AE-06` | 2 | Information on adverse events is provided to authorized staff and tools |
-| `DE.AE-07` | 1 | Cyber threat intelligence and other contextual information are integrated into the analysis of adverse events |
+| `DE.AE-07` | 1 | Cyber threat intelligence and other contextual information are integrated into the analysis |
 | `DE.AE-08` | 2 | Incidents are declared when adverse events meet the defined incident criteria |
 
 ### RESPOND
@@ -232,15 +232,15 @@
 |---|:---:|---|
 | `RS.AN-03` | 2 | Analysis is performed to establish what has taken place during an incident and the root cause of the incident |
 | `RS.AN-06` | 2 | Actions performed during an investigation are recorded, and the records' integrity and provenance are preserved |
-| `RS.AN-07` | 1 | Cause analysis is performed to determine the root cause of incidents |
-| `RS.AN-08` | 2 | An incident is characterized |
+| `RS.AN-07` | 1 | Incident data and metadata are collected, and their integrity and provenance are preserved |
+| `RS.AN-08` | 2 | An incident's magnitude is estimated and validated |
 
 #### RS.CO — Incident Response Reporting and Communication (média: 1.50)
 
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
-| `RS.CO-02` | 2 | Internal and external stakeholders are notified of incidents in a timely manner as required by applicable requirements |
-| `RS.CO-03` | 1 | Information is shared with designated internal and external stakeholders as established in the incident response plan |
+| `RS.CO-02` | 2 | Internal and external stakeholders are notified of incidents |
+| `RS.CO-03` | 1 | Information is shared with designated internal and external stakeholders |
 
 #### RS.MI — Incident Mitigation (média: 2.00)
 
@@ -258,18 +258,18 @@
 
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
-| `RC.RP-01` | 2 | The recovery portion of the incident response plan is executed once initiated from the RESPOND function activities |
+| `RC.RP-01` | 2 | The recovery portion of the incident response plan is executed once initiated from the incident response process |
 | `RC.RP-02` | 2 | Recovery actions are selected, scoped, prioritized, and performed |
 | `RC.RP-03` | 2 | The integrity of backups and other restoration assets is verified before using them for restoration |
 | `RC.RP-04` | 1 | Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms |
 | `RC.RP-05` | 2 | The integrity of restored assets is verified, systems and services are restored, and normal operating status is confirmed |
-| `RC.RP-06` | 1 | The end of incident recovery is declared based on criteria, and the incident's documentation is completed |
+| `RC.RP-06` | 1 | The end of incident recovery is declared based on criteria, and incident-related documentation is completed |
 
 #### RC.CO — Incident Recovery Communication (média: 1.50)
 
 | Subcategoria | Pontuação | Descrição |
 |---|:---:|---|
-| `RC.CO-03` | 2 | Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders as well as executive and management teams |
+| `RC.CO-03` | 2 | Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders |
 | `RC.CO-04` | 1 | Public updates on incident recovery are shared using approved methods and messaging |
 
 ---
@@ -282,9 +282,9 @@
 
 Subcategorias mais críticas:
 
-- `GV.SC-04` (pontuação: 0) — Suppliers and other third-party partners are assessed routinely to confirm that they are meeting their contractual obligations
-- `GV.SC-05` (pontuação: 0) — Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and third-party partners
-- `GV.SC-08` (pontuação: 0) — Relevant suppliers and other third-party partners are included in incident planning, response, and recovery activities
+- `GV.SC-04` (pontuação: 0) — Suppliers are known and prioritized by criticality
+- `GV.SC-05` (pontuação: 0) — Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties
+- `GV.SC-08` (pontuação: 0) — Relevant suppliers and other third parties are included in incident planning, response, and recovery activities
 
 ### #2 — IDENTIFY (Média: 1.48 | Nível: Inicial)
 
@@ -303,7 +303,7 @@ Subcategorias mais críticas:
 Subcategorias mais críticas:
 
 - `RC.RP-04` (pontuação: 1) — Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms
-- `RC.RP-06` (pontuação: 1) — The end of incident recovery is declared based on criteria, and the incident's documentation is completed
+- `RC.RP-06` (pontuação: 1) — The end of incident recovery is declared based on criteria, and incident-related documentation is completed
 - `RC.CO-04` (pontuação: 1) — Public updates on incident recovery are shared using approved methods and messaging
 
 ### #4 — RESPOND (Média: 1.77 | Nível: Inicial)
@@ -313,8 +313,8 @@ Subcategorias mais críticas:
 Subcategorias mais críticas:
 
 - `RS.MA-05` (pontuação: 1) — The criteria for initiating incident recovery are applied
-- `RS.AN-07` (pontuação: 1) — Cause analysis is performed to determine the root cause of incidents
-- `RS.CO-03` (pontuação: 1) — Information is shared with designated internal and external stakeholders as established in the incident response plan
+- `RS.AN-07` (pontuação: 1) — Incident data and metadata are collected, and their integrity and provenance are preserved
+- `RS.CO-03` (pontuação: 1) — Information is shared with designated internal and external stakeholders
 
 ### #5 — DETECT (Média: 1.82 | Nível: Inicial)
 
@@ -324,7 +324,7 @@ Subcategorias mais críticas:
 
 - `DE.CM-02` (pontuação: 1) — The physical environment is monitored to find potentially adverse events
 - `DE.CM-06` (pontuação: 1) — External service provider activities and services are monitored to find potentially adverse events
-- `DE.AE-07` (pontuação: 1) — Cyber threat intelligence and other contextual information are integrated into the analysis of adverse events
+- `DE.AE-07` (pontuação: 1) — Cyber threat intelligence and other contextual information are integrated into the analysis
 
 ### #6 — PROTECT (Média: 2.32 | Nível: Gerenciado)
 
@@ -332,11 +332,11 @@ Subcategorias mais críticas:
 
 Subcategorias mais críticas:
 
-- `PR.AT-02` (pontuação: 1) — Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant cybersecurity tasks
+- `PR.AT-02` (pontuação: 1) — Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant tasks with cybersecurity risks in mind
 - `PR.DS-10` (pontuação: 1) — The confidentiality, integrity, and availability of data-in-use are protected
 - `PR.PS-06` (pontuação: 1) — Secure software development practices are integrated, and their performance is monitored throughout the software development life cycle
 
 ---
 
-*Relatório gerado automaticamente em 2026-07-06 22:31 por nist-csf-assessment.*
+*Relatório gerado automaticamente em 2026-07-06 22:40 por nist-csf-assessment.*
 *⚠️ A estrutura do CSF 2.0 deve ser verificada na fonte oficial: [nist.gov/cyberframework](https://www.nist.gov/cyberframework)*
